@@ -7,12 +7,16 @@ import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
 const pageConfig: PageConfig = {
   // Title for your status page
-  title: "lyc8503's Status Page",
+  title: "moses's Status Page",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
-    { link: 'https://github.com/lyc8503', label: 'GitHub' },
-    { link: 'https://blog.lyc8503.net/', label: 'Blog' },
-    { link: 'mailto:me@lyc8503.net', label: 'Email Me', highlight: true },
+    { link: 'https://fangxinzhen.github.io/', label: 'GitHub' },
+    { link: 'https://blog.xinzhenfang.qzz.io/', label: 'Blog' },
+    { link: 'https://nas.xinzhenfang.linkpc.net:5667/', label: 'Fnos' },
+    { link: 'https://edgetunnel.xinzhenfang.qzz.io/', label: 'edgetunnel01' },
+    { link: 'https://edgetunnel02.xinzhenfang.ccwu.cc/', label: 'edgetunnel02' },
+    { link: 'https://cloud-mail.xinzhenfang.ccwu.cc/', label: 'Mail' },
+  
   ],
 }
 
