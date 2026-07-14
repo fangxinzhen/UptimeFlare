@@ -15,8 +15,8 @@ const pageConfig: PageConfig = {
     { link: 'https://nas.xinzhenfang.linkpc.net:5667/', label: 'Fnos' },
     { link: 'https://edgetunnel.xinzhenfang.qzz.io/', label: 'edgetunnel01' },
     { link: 'https://edgetunnel02.xinzhenfang.ccwu.cc/', label: 'edgetunnel02' },
-    { link: 'https://cloud-mail.xinzhenfang.ccwu.cc/', label: 'Mail' },
-  
+    { link: 'https://cloud-mail.xinzhenfang.ccwu.cc/', label: 'Cloud Mail' },
+    { link: 'mailto:3396947162@qq.com', label: 'Email Me', highlight: true },
   ],
 }
 
