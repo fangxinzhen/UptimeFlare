@@ -1,4 +1,3 @@
-// This is a simplified example config file for quickstart
 import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
 const pageConfig: PageConfig = {
@@ -12,55 +11,87 @@ const pageConfig: PageConfig = {
     { link: 'https://cloud-mail.xinzhenfang.ccwu.cc/', label: 'Cloud Mail' },
     { link: 'mailto:3396947162@qq.com', label: 'Email Me', highlight: true },
   ],
+  // 分组显示（推荐，页面更清晰）
+  group: {
+    '🌐 主要站点': [
+      'GitHub_monitor',
+      'Blog_monitor',
+      'Cloud_Mail_monitor'
+    ],
+    '🔗 隧道 & NAS': [
+      'edgetunnel01_monitor',
+      'edgetunnel02_monitor',
+      'Fnos_monitor',
+      'fnos_tcp_monitor'
+    ],
+  },
 }
 
 const workerConfig: WorkerConfig = {
+  kvWriteCooldownMinutes: 3,
+
   monitors: [
     {
       id: 'GitHub_monitor',
-      name: 'My github web Monitor',
+      name: 'GitHub 主页',
       method: 'GET',
       target: 'https://fangxinzhen.github.io',
+      interval: 120,           // 2分钟检查一次
+      timeout: 15000,
+      hideLatencyChart: false,
     },
     {
       id: 'Blog_monitor',
-      name: 'My Blog web Monitor',
+      name: '博客站点',
       method: 'GET',
       target: 'https://blog.xinzhenfang.qzz.io',
+      interval: 180,           // 3分钟（博客容易波动）
+      timeout: 20000,
+      hideLatencyChart: false,
     },
     {
       id: 'Fnos_monitor',
-      name: 'My Fnos Monitor',
+      name: 'Fnos NAS',
       method: 'GET',
       target: 'https://nas.xinzhenfang.linkpc.net:5667',
+      interval: 120,
+      timeout: 15000,
     },
     {
       id: 'edgetunnel01_monitor',
-      name: 'My edgetunnel01 Monitor',
+      name: 'EdgeTunnel 01',
       method: 'GET',
       target: 'https://edgetunnel.xinzhenfang.qzz.io',
+      interval: 90,
+      timeout: 15000,
     },
     {
       id: 'edgetunnel02_monitor',
-      name: 'My edgetunnel02 Monitor',
+      name: 'EdgeTunnel 02',
       method: 'GET',
       target: 'https://edgetunnel02.xinzhenfang.ccwu.cc',
+      interval: 90,
+      timeout: 15000,
     },
     {
-      id: 'Cloud_Mail_monitor',           // ← 改成下划线，避免空格
-      name: 'My Cloud Mail Monitor',
+      id: 'Cloud_Mail_monitor',
+      name: 'Cloud Mail',
       method: 'GET',
       target: 'https://cloud-mail.xinzhenfang.ccwu.cc',
+      interval: 120,
+      timeout: 15000,
     },
     {
       id: 'fnos_tcp_monitor',
-      name: 'Fnos TCP Monitor',
+      name: 'Fnos NAS (TCP)',
       method: 'TCP_PING',
       target: '121.15.177.72:5667',
+      interval: 120,
+      timeout: 8000,
     },
   ],
 
-  // 通知配置（Telegram）
+  // Telegram 通知配置
   notification: {
     webhook: {
       url: 'https://api.telegram.org/bot8971820327:AAEr69v6sXrlIkfj11gwT93VIn6U79g8wUI/sendMessage',
@@ -72,12 +103,12 @@ const workerConfig: WorkerConfig = {
       timeout: 10000,
     },
     timeZone: 'Asia/Shanghai',
-    gracePeriod: 5,
+    gracePeriod: 5,                    // 连续失败5分钟后才通知
+    skipErrorChangeNotification: true, // 减少重复通知
   },
 }
 
-// 维护计划（暂时不需要可留空）
+// 维护计划（暂时留空）
 const maintenances: MaintenanceConfig[] = []
 
-// Don't edit this line
 export { maintenances, pageConfig, workerConfig }
