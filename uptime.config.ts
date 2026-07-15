@@ -11,7 +11,6 @@ const pageConfig: PageConfig = {
     { link: 'https://cloud-mail.xinzhenfang.ccwu.cc/', label: 'Cloud Mail' },
     { link: 'mailto:3396947162@qq.com', label: 'Email Me', highlight: true },
   ],
-  // 分组显示（推荐，页面更清晰）
   group: {
     '🌐 主要站点': [
       'GitHub_monitor',
@@ -36,25 +35,20 @@ const workerConfig: WorkerConfig = {
       name: 'GitHub 主页',
       method: 'GET',
       target: 'https://fangxinzhen.github.io',
-      interval: 120,           // 2分钟检查一次
       timeout: 15000,
-      hideLatencyChart: false,
     },
     {
       id: 'Blog_monitor',
       name: '博客站点',
       method: 'GET',
       target: 'https://blog.xinzhenfang.qzz.io',
-      interval: 180,           // 3分钟（博客容易波动）
       timeout: 20000,
-      hideLatencyChart: false,
     },
     {
       id: 'Fnos_monitor',
       name: 'Fnos NAS',
       method: 'GET',
       target: 'https://nas.xinzhenfang.linkpc.net:5667',
-      interval: 120,
       timeout: 15000,
     },
     {
@@ -62,7 +56,6 @@ const workerConfig: WorkerConfig = {
       name: 'EdgeTunnel 01',
       method: 'GET',
       target: 'https://edgetunnel.xinzhenfang.qzz.io',
-      interval: 90,
       timeout: 15000,
     },
     {
@@ -70,7 +63,6 @@ const workerConfig: WorkerConfig = {
       name: 'EdgeTunnel 02',
       method: 'GET',
       target: 'https://edgetunnel02.xinzhenfang.ccwu.cc',
-      interval: 90,
       timeout: 15000,
     },
     {
@@ -78,7 +70,6 @@ const workerConfig: WorkerConfig = {
       name: 'Cloud Mail',
       method: 'GET',
       target: 'https://cloud-mail.xinzhenfang.ccwu.cc',
-      interval: 120,
       timeout: 15000,
     },
     {
@@ -86,12 +77,10 @@ const workerConfig: WorkerConfig = {
       name: 'Fnos NAS (TCP)',
       method: 'TCP_PING',
       target: '121.15.177.72:5667',
-      interval: 120,
       timeout: 8000,
     },
   ],
 
-  // Telegram 通知配置
   notification: {
     webhook: {
       url: 'https://api.telegram.org/bot8971820327:AAEr69v6sXrlIkfj11gwT93VIn6U79g8wUI/sendMessage',
@@ -103,12 +92,11 @@ const workerConfig: WorkerConfig = {
       timeout: 10000,
     },
     timeZone: 'Asia/Shanghai',
-    gracePeriod: 5,                    // 连续失败5分钟后才通知
-    skipErrorChangeNotification: true, // 减少重复通知
+    gracePeriod: 5,
+    skipErrorChangeNotification: true,
   },
 }
 
-// 维护计划（暂时留空）
 const maintenances: MaintenanceConfig[] = []
 
 export { maintenances, pageConfig, workerConfig }
