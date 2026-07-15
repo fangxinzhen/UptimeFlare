@@ -122,32 +122,7 @@ const workerConfig: WorkerConfig = {
       //timeout: 5000,
     },
   ],
-  // [Optional] Notification settings
-  notification: {
-    // [Optional] Notification webhook settings, if not specified, no notification will be sent
-    // More info at Wiki: https://github.com/lyc8503/UptimeFlare/wiki/Setup-notification
-    webhook: {
-       url: 'https://api.telegram.org/bot123456:ABCDEF/sendMessage',
-       payloadType: 'param',
-       payload: {
-          chat_id: 5678,
-          text: '$MSG'
-                },
-},
-    // [Optional] timezone used in notification messages, default to "Etc/GMT"
-    timeZone: 'Asia/Shanghai',
-    // [Optional] grace period in minutes before sending a notification
-    // notification will be sent only if the monitor is down for N continuous checks after the initial failure
-    // if not specified, notification will be sent immediately
-    gracePeriod: 5,
-}
-
-// You can define multiple maintenances here
-// During maintenance, an alert will be shown at status page
-// Also, related downtime notifications will be skipped (if any)
-// Of course, you can leave it empty if you don't need this feature
-
-// const maintenances: MaintenanceConfig[] = []
+  
 
 const maintenances: MaintenanceConfig[] = [
   {
