@@ -26,25 +26,75 @@ const workerConfig: WorkerConfig = {
     // Example HTTP Monitor
     {
       // `id` should be unique, history will be kept if the `id` remains constant
-      id: 'foo_monitor',
+      id: 'GitHub_monitor',
       // `name` is used at status page and callback message
-      name: 'My API Monitor',
+      name: 'My github web Monitor',
       // `method` should be a valid HTTP Method
       method: 'GET',
       // `target` is a valid URL
-      target: 'https://example.com',
+      target: 'https://fangxinzhen.github.io',
       // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
-      tooltip: 'This is a tooltip for this monitor',
+      //tooltip: 'This is a tooltip for this monitor',
       // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
-      statusPageLink: 'https://example.com',
+      //statusPageLink: 'https://fangxinzhen.github.io',
       // [OPTIONAL] `expectedCodes` is an array of acceptable HTTP response codes, if not specified, default to 2xx
-      expectedCodes: [200],
+      //expectedCodes: [200],
       // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
-      timeout: 10000,
+      //timeout: 10000,
       // [OPTIONAL] headers to be sent
-      headers: {
-        'User-Agent': 'Uptimeflare',
-        Authorization: 'Bearer YOUR_TOKEN_HERE',
+      //headers: {
+      //  'User-Agent': 'Uptimeflare',
+      //  Authorization: 'Bearer YOUR_TOKEN_HERE',
+      },
+    {
+      // `id` should be unique, history will be kept if the `id` remains constant
+      id: 'Blog_monitor',
+      // `name` is used at status page and callback message
+      name: 'My Blog web Monitor',
+      // `method` should be a valid HTTP Method
+      method: 'GET',
+      // `target` is a valid URL
+      target: 'https://blog.xinzhenfang.qzz.io',
+      },
+    {
+      // `id` should be unique, history will be kept if the `id` remains constant
+      id: 'Fnos_monitor',
+      // `name` is used at status page and callback message
+      name: 'My Fnos Monitor',
+      // `method` should be a valid HTTP Method
+      method: 'GET',
+      // `target` is a valid URL
+      target: 'https://nas.xinzhenfang.linkpc.net:5667',
+      },
+    {
+      // `id` should be unique, history will be kept if the `id` remains constant
+      id: 'edgetunnel01_monitor',
+      // `name` is used at status page and callback message
+      name: 'My edgetunnel01 Monitor',
+      // `method` should be a valid HTTP Method
+      method: 'GET',
+      // `target` is a valid URL
+      target: 'https://edgetunnel.xinzhenfang.qzz.io',
+      },
+    {
+      // `id` should be unique, history will be kept if the `id` remains constant
+      id: 'edgetunnel02_monitor',
+      // `name` is used at status page and callback message
+      name: 'My edgetunnel02 Monitor',
+      // `method` should be a valid HTTP Method
+      method: 'GET',
+      // `target` is a valid URL
+      target: 'https://edgetunnel02.xinzhenfang.ccwu.cc',
+      },
+    {
+      // `id` should be unique, history will be kept if the `id` remains constant
+      id: 'Cloud Mail_monitor',
+      // `name` is used at status page and callback message
+      name: 'My Cloud Mail Monitor',
+      // `method` should be a valid HTTP Method
+      method: 'GET',
+      // `target` is a valid URL
+      target: 'https://cloud-mail.xinzhenfang.ccwu.cc',
       },
       // [OPTIONAL] body to be sent (require POST/PUT/PATCH method)
       // body: 'Hello, world!',
@@ -61,15 +111,15 @@ const workerConfig: WorkerConfig = {
     },
     // Example TCP Monitor
     {
-      id: 'test_tcp_monitor',
-      name: 'Example TCP Monitor',
+      id: 'fnos_tcp_monitor',
+      name: 'fno TCP Monitor',
       // `method` should be `TCP_PING` for tcp monitors
       method: 'TCP_PING',
       // `target` should be `host:port` for tcp monitors
-      target: '1.2.3.4:22',
-      tooltip: 'My production server SSH',
-      statusPageLink: 'https://example.com',
-      timeout: 5000,
+      target: '121.15.177.72:5667',
+      //tooltip: 'My production server SSH',
+      //statusPageLink: 'https://example.com',
+      //timeout: 5000,
     },
   ],
   // [Optional] Notification settings
@@ -78,7 +128,7 @@ const workerConfig: WorkerConfig = {
     // More info at Wiki: https://github.com/lyc8503/UptimeFlare/wiki/Setup-notification
     webhook: {
       // [Required] webhook URL (example: Telegram Bot API)
-      url: 'https://api.telegram.org/bot123456:ABCDEF/sendMessage',
+      url: 'https://api.telegram.org/8971820327:AAEr69v6sXrlIkfj11gwT93VIn6U79g8wUI/sendMessage',
       // [Optional] HTTP method, default to 'GET' for payloadType=param, 'POST' otherwise
       // method: 'POST',
       // [Optional] headers to be sent
@@ -119,18 +169,18 @@ const workerConfig: WorkerConfig = {
 const maintenances: MaintenanceConfig[] = [
   {
     // [Optional] Monitor IDs to be affected by this maintenance
-    monitors: ['foo_monitor', 'bar_monitor'],
+    //monitors: ['foo_monitor', 'bar_monitor'],
     // [Optional] default to "Scheduled Maintenance" if not specified
-    title: 'Test Maintenance',
+    //title: 'Test Maintenance',
     // Description of the maintenance, will be shown at status page
-    body: 'This is a test maintenance, server software upgrade',
+   // body: 'This is a test maintenance, server software upgrade',
     // Start time of the maintenance, in UNIX timestamp or ISO 8601 format
-    start: '2020-01-01T00:00:00+08:00',
+    //start: '2020-01-01T00:00:00+08:00',
     // [Optional] end time of the maintenance, in UNIX timestamp or ISO 8601 format
     // if not specified, the maintenance will be considered as on-going
-    end: '2050-01-01T00:00:00+08:00',
+    //end: '2050-01-01T00:00:00+08:00',
     // [Optional] color of the maintenance alert at status page, default to "yellow"
-    color: 'blue',
+    //color: 'blue',
   },
 ]
 
