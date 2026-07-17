@@ -20,8 +20,7 @@ const pageConfig: PageConfig = {
     '🔗 隧道 & NAS': [
       'edgetunnel01_monitor',
       'edgetunnel02_monitor',
-      'Fnos_monitor',
-      'fnos_tcp_monitor'
+      'Fnos_monitor'
     ],
   },
 }
@@ -71,13 +70,6 @@ const workerConfig: WorkerConfig = {
       method: 'GET',
       target: 'https://cloud-mail.xinzhenfang.ccwu.cc',
       timeout: 15000,
-    },
-    {
-      id: 'fnos_tcp_monitor',
-      name: 'Fnos NAS (TCP)',
-      method: 'TCP_PING',
-      target: '121.15.177.72:5667',
-      timeout: 8000,
     },
   ],
 
