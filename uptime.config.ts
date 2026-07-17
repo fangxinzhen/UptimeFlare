@@ -4,7 +4,7 @@ const pageConfig: PageConfig = {
   title: "moses's Status Page",
   links: [
     { link: 'https://fangxinzhen.github.io/', label: 'GitHub' },
-    { link: 'https://blog.xinzhenfang.qzz.io/', label: 'Blog' },
+    { link: 'https://blog.moses.qzz.io/', label: 'Blog' },
     { link: 'https://nas.xinzhenfang.linkpc.net:5667/', label: 'Fnos' },
     { link: 'https://edgetunnel.xinzhenfang.qzz.io/', label: 'edgetunnel01' },
     { link: 'https://edgetunnel02.xinzhenfang.ccwu.cc/', label: 'edgetunnel02' },
@@ -40,7 +40,7 @@ const workerConfig: WorkerConfig = {
       id: 'Blog_monitor',
       name: '博客站点',
       method: 'GET',
-      target: 'https://blog.xinzhenfang.qzz.io',
+      target: 'https://blog.moses.qzz.io',
       timeout: 20000,
     },
     {
