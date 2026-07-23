@@ -5,7 +5,6 @@ const pageConfig: PageConfig = {
   links: [
     { link: 'https://fangxinzhen.github.io/', label: 'GitHub' },
     { link: 'https://blog.moses.qzz.io/', label: 'Blog' },
-    { link: 'https://nas.xinzhenfang.linkpc.net:5667/', label: 'Fnos' },
     { link: 'https://edgetunnel.xinzhenfang.qzz.io/', label: 'edgetunnel01' },
     { link: 'https://edgetunnel02.xinzhenfang.ccwu.cc/', label: 'edgetunnel02' },
     { link: 'https://cloud-mail.xinzhenfang.ccwu.cc/', label: 'Cloud Mail' },
@@ -17,10 +16,9 @@ const pageConfig: PageConfig = {
       'Blog_monitor',
       'Cloud_Mail_monitor'
     ],
-    '🔗 隧道 & NAS': [
+    '🔗 隧道 ': [
       'edgetunnel01_monitor',
-      'edgetunnel02_monitor',
-      'Fnos_monitor'
+      'edgetunnel02_monitor'
     ],
   },
 }
@@ -38,17 +36,10 @@ const workerConfig: WorkerConfig = {
     },
     {
       id: 'Blog_monitor',
-      name: '博客站点',
+      name: 'Blog 站点',
       method: 'GET',
       target: 'https://blog.moses.qzz.io',
       timeout: 20000,
-    },
-    {
-      id: 'Fnos_monitor',
-      name: 'Fnos NAS',
-      method: 'GET',
-      target: 'https://nas.xinzhenfang.linkpc.net:5667',
-      timeout: 15000,
     },
     {
       id: 'edgetunnel01_monitor',
